@@ -11,13 +11,16 @@ pipeline {
         }
         stage('docker image build') {
             steps {
-                sh 'docker image build -t shaikkhajaibrahim/saleor-dashboar:DEV .'
+                sh 'sudo docker image build -t kiranteja623/salesdashboard .'
+                //sh 'docker image build -t shaikkhajaibrahim/saleor-dashboar:DEV .'
             }
         }
         stage('push image to registry') {
             steps {
-                sh 'docker image push shaikkhajaibrahim/saleor-dashboar:DEV'
+                  sh 'sudo docker image push kiranteja623/salesdashboard'
+                //sh 'docker image push shaikkhajaibrahim/saleor-dashboar:DEV'
             }
         }
     }
 }
+
